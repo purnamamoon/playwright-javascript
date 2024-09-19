@@ -24,6 +24,6 @@ npx playwright test
 
 ## Generate Report
 
-npx allure generate ./allure-results -o ./allure-report
+npx allure generate allure-results -o allure-report
 
 npx allure open allure-report 
