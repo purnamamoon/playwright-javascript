@@ -2,9 +2,9 @@ const { devices } = require('@playwright/test')
 
 const defineConfig = {
   testDir: './tests',
-  reporter: 'html',
+  reporter: [["line"], ["allure-playwright"]],
   use: {
-    trace: 'on-first-retry',
+    video: 'on',
     testIdAttribute: 'data-test'
   },
 

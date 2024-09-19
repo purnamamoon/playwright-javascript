@@ -6,8 +6,17 @@ exports.CartPage = class CartPage {
 
       this.cartItem = 'inventory-item'
       this.itemName = 'inventory-item-name'
+      this.removeBtn = '(//button[@class="btn btn_secondary btn_small cart_button"])'
     }
     
+    async clickRemoveBtn(){
+        await this.page.locator(this.removeBtn).click()
+    }
+
+    async assertItemIsNotInTheCart(){
+        await expect(this.page.getByTestId(this.cartItem)).not.toBeVisible()
+    }
+
     async assertItemIsVisible(){
         await expect(this.page.getByTestId(this.cartItem)).toBeVisible()
     }
